@@ -4,6 +4,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balance Parantheses", "Bala
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Balanced Parantheses Test", "Balanced Parantheses Test\Balanced Parantheses Test.csproj", "{0F572C37-B071-4231-A27D-64B4CD5BFC16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "How Many Words Test", "How Many Words Test\How Many Words Test.csproj", "{D26BEB9C-22EB-4361-9899-FBCC6944DA07}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "How Many Words", "How Many Words\How Many Words.csproj", "{427B7968-ED76-4A62-832B-FF4296104686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +22,13 @@ Global
 		{0F572C37-B071-4231-A27D-64B4CD5BFC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F572C37-B071-4231-A27D-64B4CD5BFC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F572C37-B071-4231-A27D-64B4CD5BFC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26BEB9C-22EB-4361-9899-FBCC6944DA07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26BEB9C-22EB-4361-9899-FBCC6944DA07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26BEB9C-22EB-4361-9899-FBCC6944DA07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26BEB9C-22EB-4361-9899-FBCC6944DA07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{427B7968-ED76-4A62-832B-FF4296104686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{427B7968-ED76-4A62-832B-FF4296104686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{427B7968-ED76-4A62-832B-FF4296104686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{427B7968-ED76-4A62-832B-FF4296104686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
