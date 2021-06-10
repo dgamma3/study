@@ -10,45 +10,60 @@ namespace Dam_Design
         {
         }
         
-        public static void DamnDesign(int[] wallPositions , int[] wallHeights )
+        public static int DamnDesign(int[] wallPositions , int[] wallHeights )
         {
-            var mudwall = wallPositions[1] - wallPositions[0]-1;
-            var wallheights = wallHeights[1] - wallHeights[0];
-            var middleFromLeft = new int[mudwall];
-            var middleFromRight = new int[mudwall];
-            var finalMudWall = new int[mudwall];
-
-            var start = wallHeights[0]+1;
-            var end = wallHeights[1]+1;
-            
-            
-            for (int i = 0; i < mudwall; i++)
+            var maxHights = new List<int>();
+            for (int i = 0; i < wallPositions.Length-1; i++)
             {
-                middleFromLeft[i] = start++;
+                maxHights.Add(maxMudHight(new []{wallPositions[i],wallPositions[i+1]}, new []{wallHeights[i], wallHeights[i+1]}));
             }
 
-            for (int j = mudwall - 1; j >= 0; j--)
+            return maxHights.Max();
+        }
+
+        private static int maxMudHight(int[] wallPositions, int[] wallHeights)
+        {
+            var spaceBetweenWalls = wallPositions[1] - wallPositions[0] - 1;
+            var wallHeightDiff = wallHeights[1] - wallHeights[0];
+            var spaceBetweenHeights = wallHeightDiff - 1;
+            var fill = new int[spaceBetweenWalls];
+            var start = wallHeights[0] + 1;
+            var end = wallHeights[1];
+
+            /*
+            if (linearMudSegementsNeeded < 0)
             {
-                middleFromRight[j] = end++;
+                return new int[]{wallHeights[0], wallHeights[1]}.Max();
+            }*/
+            if (spaceBetweenHeights > 0 && spaceBetweenWalls > spaceBetweenHeights)
+            {
+                for (int i = 0; i < wallHeightDiff; i++)
+                {
+                    fill[i] = (start++);
+                }
+
+                var remaingSpace = spaceBetweenWalls - wallHeightDiff;
+
+                for (int i = 0, counter = 0; i < remaingSpace; i = i + 2)
+                {
+                    fill[wallHeightDiff + counter] = (start);
+                    fill[fill.Length - 1 - counter] = start++;
+                    counter++;
+                }
+            }
+            else if(spaceBetweenHeights > 0 && spaceBetweenWalls == spaceBetweenHeights)
+            {
+                for (int i = 0; i < spaceBetweenWalls; i++)
+                {
+                    fill[i] = (start++);
+                }
+            }
+            else if(spaceBetweenHeights < 0 && spaceBetweenWalls > spaceBetweenHeights)
+            {
+                var g = 3;
             }
 
-            var intersect = middleFromLeft.Intersect(middleFromRight);
-            var except = middleFromLeft.Except(middleFromRight).ToArray();
-
-            for (int i = 0; i < except.Count(); i++)
-            {
-                finalMudWall[i] = except[i];
-
-            }
-
-            var diff = finalMudWall.Length - except.Length;
-
-            for (int i = except.Length-1; i < finalMudWall.Length; i++)
-            {
-                finalMudWall[i] =;
-
-            }
-
+            return fill.Length == 0 ?0 : fill.Max();
         }
     }
 }
