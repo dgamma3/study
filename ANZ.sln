@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "How Many Words Test", "How 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "How Many Words", "How Many Words\How Many Words.csproj", "{427B7968-ED76-4A62-832B-FF4296104686}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dam Design", "Dam Design\Dam Design.csproj", "{90105E43-245F-4557-BB94-BCE2C4693BF6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dam Design Tests", "Dam Design Tests\Dam Design Tests.csproj", "{4A5072D4-53B0-484D-8E77-AC4D759D02B0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,13 @@ Global
 		{427B7968-ED76-4A62-832B-FF4296104686}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{427B7968-ED76-4A62-832B-FF4296104686}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{427B7968-ED76-4A62-832B-FF4296104686}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90105E43-245F-4557-BB94-BCE2C4693BF6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90105E43-245F-4557-BB94-BCE2C4693BF6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90105E43-245F-4557-BB94-BCE2C4693BF6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90105E43-245F-4557-BB94-BCE2C4693BF6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5072D4-53B0-484D-8E77-AC4D759D02B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5072D4-53B0-484D-8E77-AC4D759D02B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5072D4-53B0-484D-8E77-AC4D759D02B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5072D4-53B0-484D-8E77-AC4D759D02B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
