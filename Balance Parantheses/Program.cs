@@ -41,31 +41,33 @@ namespace ANZ
             for (int i = 0; i < brackets.Length; i++) { 
                 chars[i] = brackets[i]; 
             } 
-            if (chars.Length % 1 == 0)
+            if (chars.Length % 2==1)
             {
                 return -1;
             }
 
             Stack<char> stack = new Stack<char>();
             
-            char prevPush = chars[0];
+           
             foreach (var c in chars)
             {
-                if (c != prevPush)
-                {
-                    if (stack.Count > 0)
-                        stack.Pop();
-                    prevPush = c;
-                    
-                }
-                else
-                {
-                    stack.Push(c);
-                    prevPush = c;
-    
-                }
+            
                 
+             
+                    char val;
+                    var tryPeek = stack.TryPeek(out val);
+                    
+                    stack.Push(c);
+                    
+                    if (tryPeek && (c==')' && val=='('))
+                    {
+                        stack.Pop();
+                        stack.Pop();
+                    }
+
             }
+
+            return stack.Count / 2 <0?0 : stack.Count / 2;
 
         }
 
