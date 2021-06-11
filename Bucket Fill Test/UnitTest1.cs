@@ -13,7 +13,26 @@ namespace Bucket_Fill_Test
         [Test]
         public void Test1()
         {
-            Program.BucketFill(new string[]{"aabba", "aabba", "aaacb"});
+            var strokesRequired  = Program.StrokesRequired(new string[]{"aabba", "aabba", "aaacb"});
+            
+            Assert.AreEqual(5, strokesRequired);
+        }        
+        
+         [Test]
+        public void Test3()
+        {
+            var strokesRequired  = Program.StrokesRequired(new string[]{ "bbba", "abba", "acaa" , "aaac" });
+            
+            Assert.AreEqual(4, strokesRequired);
         }
+        
+             [Test]
+        public void Test2()
+        {
+            var strokesRequired  = Program.StrokesRequired(new string[]{ "aaaba" , "ababa" , "aaaca" });
+            
+            Assert.AreEqual(5, strokesRequired);
+        }
+        
     }
 }
