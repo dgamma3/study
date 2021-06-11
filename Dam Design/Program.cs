@@ -6,6 +6,7 @@ namespace Dam_Design
 {
    public class Program
     {
+        //https://www.hackerrank.com/work/library/hackerrank?copyscrape=true&difficulties=Easy&question=569491&view=question
         static void Main(string[] args)
         {
         }
@@ -25,7 +26,6 @@ namespace Dam_Design
         {
             var spaceBetweenWalls = wallPositions[1] - wallPositions[0] - 1;
             var wallHeightDiff = wallHeights[1] - wallHeights[0];
-            var spaceBetweenHeights = wallHeightDiff - 1;
             var fill = new int[spaceBetweenWalls];
             var start = wallHeights[0] + 1;
             var end = wallHeights[1];
@@ -35,7 +35,7 @@ namespace Dam_Design
             {
                 return new int[]{wallHeights[0], wallHeights[1]}.Max();
             }*/
-            if (spaceBetweenHeights > 0 && spaceBetweenWalls > spaceBetweenHeights)
+            if (wallHeightDiff > 0 && spaceBetweenWalls > wallHeightDiff)
             {
                 for (int i = 0; i < wallHeightDiff; i++)
                 {
@@ -51,16 +51,21 @@ namespace Dam_Design
                     counter++;
                 }
             }
-            else if(spaceBetweenHeights > 0 && spaceBetweenWalls == spaceBetweenHeights)
-            {
+            else if(wallHeightDiff > 0 && spaceBetweenWalls == wallHeightDiff)
+            {//increasing
                 for (int i = 0; i < spaceBetweenWalls; i++)
                 {
                     fill[i] = (start++);
                 }
             }
-            else if(spaceBetweenHeights < 0 && spaceBetweenWalls > spaceBetweenHeights)
-            {
-                var g = 3;
+            else if(wallHeightDiff < 0 && spaceBetweenWalls > wallHeightDiff)
+            {//decreasing
+
+                throw new NotImplementedException();
+                for (int i = 0; i < spaceBetweenWalls; i++)
+                {
+                    fill[i] = (start++);
+                }
             }
 
             return fill.Length == 0 ?0 : fill.Max();
